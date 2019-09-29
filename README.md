@@ -10,3 +10,5 @@ https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c
 
 Twitter Sentimental Analysis:
 https://www.kaggle.com/c/twitter-sentiment-analysis2/data
+
+NYSE Data: https://www.kaggle.com/dgawlik/nyse#securities.csv
