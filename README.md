@@ -4,7 +4,7 @@ Here are some helpful links and notes:
 
 Data Set to run the model on:
 
-1)https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
+1) https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018
 
 TensorFlow links:
 1) https://github.com/aymericdamien/TensorFlow-Examples
