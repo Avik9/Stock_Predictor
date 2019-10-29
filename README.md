@@ -23,6 +23,6 @@ NYSE Data:
 
 Follow the following instructions before running the program:
 
-1. Type: "source ./venv/bin/activate" into the terminal to enable the virtual environment.
+1. Type: `source ./venv/bin/activate` into the terminal to enable the virtual environment.
 2. Go forward and do whatever you have to.
-3. Type: "deactivate" to disable the virtual environment.
+3. Type: `deactivate` to disable the virtual environment.
