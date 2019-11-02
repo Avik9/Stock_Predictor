@@ -1,6 +1,10 @@
 # Website for the API: https://alpha-vantage.readthedocs.io/en/latest/
 # API Key: RWBEQKLG65YPF62U
 
+# importing the dependencies 
+import tensorflow as tf 
+import numpy as np 
+import matplotlib.pyplot as plt 
 import csv
 
 # from alpha_vantage.techindicators import TechIndicators
@@ -9,16 +13,16 @@ import csv
 # import matplotlib.pyplot as plt
 
 listOfCompanies = [
-    'APPL',  # Apple
-    'COF',   # Capital One Bank
-    'MSFT',  # Microsoft
-    'NFLX',  # Netflix
-    'GOOG',  # Google
-    'INTC',  # Intel
+    # 'APPL',  # Apple
+    # 'COF',   # Capital One Bank
+    # 'MSFT',  # Microsoft
+    # 'NFLX',  # Netflix
+    # 'GOOG',  # Google
+    # 'INTC',  # Intel
     'AMZN',  # Amazon
-    'FB',    # Facebook
-    'GS',    # Goldman Sachs
-    'TSLA',  # Tesla
+    # 'FB',    # Facebook
+    # 'GS',    # Goldman Sachs
+    # 'TSLA',  # Tesla
 
     # 'BRK-B', # Berkshire Hathaway
     # 'BABA',  # Alibaba
@@ -47,14 +51,18 @@ listOfCompanies = [
 ]
 
 for company in listOfCompanies:
-    # try:
-    # Opening the file
-    with open('Stock_Data/' + company + ".csv") as company_data:
-        companyDataReader = csv.reader(company_data, delimiter=',')
-        for row in companyDataReader:
-            print(row)
+    try:
+        # Opening the file
+        with open('Stock_Data/' + company + ".csv") as company_data:
+            companyDataReader = csv.reader(company_data, delimiter=',')
+            for row in companyDataReader:
+                # To print the data
+                print(row)
 
-        # To print the data
+            
+    except:
+        print(company + " could not be loaded.")
+        continue
 
 
 
