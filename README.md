@@ -29,7 +29,7 @@ Follow the following instructions before running the program:
 
 # Tensorflow
 
-*) https://ml-cheatsheet.readthedocs.io/en/latest/index.html
-*) https://towardsdatascience.com/get-started-with-tensorflow-2-0-and-linear-regression-29b5dbd65977
-*) https://www.tensorflow.org/guide/migrate
-*) https://www.tensorflow.org/api_docs/python/tf/compat/v1
+* https://ml-cheatsheet.readthedocs.io/en/latest/index.html
+* https://towardsdatascience.com/get-started-with-tensorflow-2-0-and-linear-regression-29b5dbd65977
+* https://www.tensorflow.org/guide/migrate
+* https://www.tensorflow.org/api_docs/python/tf/compat/v1
