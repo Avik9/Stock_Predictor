@@ -5,12 +5,15 @@ Author: Aymeric Damien
 Project: https://github.com/aymericdamien/TensorFlow-Examples/
 '''
 
-from __future__ import print_function
+from __future__ import absolute_import, division, print_function, unicode_literals
+import tensorflow as tf
 
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
 
-# import tens
+import tensorflow_datasets as tfds
+
+# import tensorflow.compat.v1 as tf
+# tf.disable_v2_behavior()
+
 import numpy
 import matplotlib.pyplot as plt
 rng = numpy.random
