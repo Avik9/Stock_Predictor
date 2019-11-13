@@ -5,12 +5,11 @@
 import tensorflow as tf 
 import numpy as np 
 import matplotlib.pyplot as plt 
-import csv
+import pandas
 
-# from alpha_vantage.techindicators import TechIndicators
-# from alpha_vantage.timeseries import TimeSeries
-# from pprint import pprint
-# import matplotlib.pyplot as plt
+from alpha_vantage.techindicators import TechIndicators
+from alpha_vantage.timeseries import TimeSeries
+from pprint import pprint
 
 listOfCompanies = [
     # 'APPL',  # Apple
@@ -60,42 +59,41 @@ for company in listOfCompanies:
     try:
         # Opening the file
         with open('Stock_Data/' + 'AMZN' + ".csv") as company_data:
-            companyDataReader = csv.reader(company_data, delimiter=',')
-            for row in companyDataReader:
-                dates_data.append(row[0])
-                open_data.append(row[1])
-                high_data.append(row[2])
-                low_data.append(row[3])
-                close_data.append(row[4])
-                # To print the data
-                # print(row)
+            companyData = pandas.read_csv(company_data, delimiter=',')
+            ax = plt.gca()
+            companyData.plot(kind='line',x='Date',y='Open',ax=ax)
+            companyData.plot(kind='line',x='Date',y='High',ax=ax)
+            companyData.plot(kind='line',x='Date',y='Low',ax=ax)
+            companyData.plot(kind='line',x='Date',y='Close',ax=ax)
+
+            plt.show()
             
     except:
         print(company + " could not be loaded.")
         continue
 
-        y = dates_data[1::]
+    # y = dates_data[1::]
 
-        x1 = open_data[1::]
-        plt.plot(x1, y, label = "Open Prices")
+    # x1 = open_data[1::]
+    # plt.plot(x1, y, label = "Open Prices")
 
-        # x4 = close_data[1::]
-        # plt.plot(x4, y, label = "Close Prices")
+    # # x4 = close_data[1::]
+    # # plt.plot(x4, y, label = "Close Prices")
 
-        # naming the x axis 
-        plt.xlabel('Prices')
+    # # naming the x axis 
+    # plt.xlabel('Prices')
 
-        # naming the y axis 
-        plt.ylabel('Time')
+    # # naming the y axis 
+    # plt.ylabel('Time')
 
-        # giving a title to my graph 
-        plt.title('Four lines on same graph!')
+    # # giving a title to my graph 
+    # plt.title('Four lines on same graph!')
 
-        # show a legend on the plot 
-        # plt.legend() 
-        
-        # function to show the plot 
-        plt.show() 
+    # # show a legend on the plot 
+    # # plt.legend() 
+    
+    # # function to show the plot 
+    # plt.show() 
 
 
 
@@ -107,22 +105,27 @@ for company in listOfCompanies:
 
 # WORKING WITH THE API (Later Stage of the project)
 
-# ts = TimeSeries(key='RWBEQKLG65YPF62U')
+# ts = TimeSeries(key='RWBEQKLG65YPF62U', output_format='pandas')
 # counter = 0
+
+# listOfCompanies = ['AMZN']
 
 # for company in listOfCompanies:
 #     try:
 #         # To print the data
 #         print('This is the data for ' + company)
-#         data, meta_data = ts.get_daily(symbol = company)
+#         data, meta_data = ts.get_daily(symbol = company, outputsize='full')
 #         pprint(data)
 
 #         # To plot the data
-#         ti = TechIndicators(key='RWBEQKLG65YPF62U', output_format='pandas') # API Key: RWBEQKLG65YPF62U
-#         data, meta_data = ti.get_bbands(symbol = company, interval='60min', time_period=60)
+#         # ti = TechIndicators(key='RWBEQKLG65YPF62U', output_format='pandas') # API Key: RWBEQKLG65YPF62U
+#         # data, meta_data = ti.get_daily(symbol = company, outputsize='full')
 
-#         data.plot()
-#         plt.title('BBbands indicator for ' + company + ' stock (60 min)')
+#         data['1. open'].plot()
+#         data['2. high'].plot()
+#         data['3. low'].plot()
+#         data['4. close'].plot()
+#         plt.title('Daily indicator for ' + company)
 #         plt.show()
 
 
@@ -130,4 +133,4 @@ for company in listOfCompanies:
 #         print('The data for ' + company + ' did not load')
 #         counter += 1
 
-# print(counter, "companies out of", len(listOfCompanies), "companies' data was not retrieved")\
+# print(counter, "companies out of", len(listOfCompanies), "companies' data was not retrieved")
