@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas
 
 listOfCompanies = [
-    # 'APPL',  # Apple
+    # 'AAPL',  # Apple
     # 'COF',   # Capital One Bank
     # 'MSFT',  # Microsoft
     # 'NFLX',  # Netflix
