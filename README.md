@@ -1,4 +1,4 @@
-# Stock_Predictor
+# Stock Predictor
 
 This was a semester long research project to learn how ARIMA works and how we can 
 make time based predictions.
